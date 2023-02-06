@@ -1,0 +1,22 @@
+.loginWrapper{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 35%;
+    align-self: center;
+}

@@ -1,0 +1,15 @@
+.registerWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+h1 {
+    align-self: center;
+}

@@ -1,0 +1,14 @@
+.editWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+h1 {
+    align-self: center;
+}
+
+Button{
+    width: 110px;
+    align-self: flex-end;
+}
