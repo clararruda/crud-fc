@@ -147,7 +147,7 @@ export const UserEdit = () => {
             <Snackbar open={openError} autoHideDuration={1500}
                 onClose={() => setOpenError(false)}>
                 <Alert severity="error"
-                    onClose={() => setOpenError(false)}>Erro!</Alert>
+                    onClose={() => setOpenError(false)}>Ocorreu um erro inesperado!</Alert>
             </Snackbar>
             <Snackbar open={openSuccess} autoHideDuration={1500}
                 onClose={() => setOpenSuccess(false)}>

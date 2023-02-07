@@ -1,4 +1,4 @@
-import { List, ListItem, IconButton, ListItemText, Button, CircularProgress } from "@mui/material";
+import { List, ListItem, IconButton, ListItemText, Button } from "@mui/material";
 import { Edit } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import './userList.css';
@@ -10,7 +10,7 @@ export const UserPage = () => {
 
     return (
         <div className="listWrapper">
-            <Button onClick={() => window.history.back()} variant="outlined" sx={{ alignSelf: "flex-start" }}>Voltar</Button>
+            <Button onClick={() => window.history.back()} variant="outlined" sx={{ alignSelf: "flex-start" }}>Sair</Button>
             <h1>Usuários cadastrados</h1>
             <List sx={{ width: "100%", maxWidth: 360, marginLeft: "50px" }}>
                 {users.map((value) => (

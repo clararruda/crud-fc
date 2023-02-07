@@ -1,7 +1,7 @@
 import { Button, TextField, Alert, Snackbar } from "@mui/material";
-import { useNavigate } from "react-router-dom";
-import './login.css';
-import { useFormControls } from "./loginFormControl";
+import { FormDialog } from "./dialog/recoverDialog";
+import './passRecover.css';
+import { useFormControls } from "./passRecoverFormControl";
 
 const inputFieldValues = [
     {
@@ -10,32 +10,44 @@ const inputFieldValues = [
         id: "login"
     },
     {
-        name: "password",
-        label: "Senha",
-        id: "password",
-        type: "password"
-    }
+        name: "cpf",
+        label: "CPF",
+        id: "cpf"
+    },
+    {
+        name: "birth",
+        label: "Data de nascimento",
+        id: "birth"
+    },
+    {
+        name: "mother",
+        label: "Nome da mãe",
+        id: "mother"
+    },
 ]
 
-export const Login = () => {
-    const nav = useNavigate();
+export const PassRecover = () => {
     const {
         handleInputValue,
         handleFormSubmit,
         errors,
+        handleClose,
+        open,
         openErrorUser,
         openErrorPass,
         setOpenErrorUser,
         setOpenErrorPass,
         openSuccess,
-        setOpenSuccess
+        setOpenSuccess,
+        user
     } = useFormControls();
 
     return (
-        <div className="loginWrapper">
+        <div className="recoverWrapper">
             <Button onClick={() => window.history.back()} variant="outlined" sx={{ alignSelf: "flex-start" }}>Voltar</Button>
-            <h1>LOGIN</h1>
-            <div className="loginForm">
+            <h1>Recuperação de senha</h1>
+            <span>Insira seus dados corretamente para recuperação</span>
+            <div className="recoverForm">
                 <form autoComplete="off" onSubmit={handleFormSubmit}>
                     {inputFieldValues.map((inputFieldValue, index) => {
                         return (
@@ -47,7 +59,6 @@ export const Login = () => {
                                 label={inputFieldValue.label}
                                 error={errors[inputFieldValue.name]}
                                 id={inputFieldValue.id}
-                                type={inputFieldValue?.type}
                                 autoComplete="none"
                                 {...(errors[inputFieldValue.name] && {
                                     error: true,
@@ -60,25 +71,23 @@ export const Login = () => {
                     })}
                 </form>
             </div>
-            <div className="buttons">
-                <Button onClick={() => nav('/recover')} sx={{ width: "170px", alignSelf: "center" }}>Esqueci a senha</Button>
-                <Button onClick={handleFormSubmit} sx={{ width: "170px", alignSelf: "center" }} variant="contained">Login</Button>
-            </div>
+            <Button onClick={handleFormSubmit} sx={{ width: "170px", alignSelf: "center" }} variant="contained">Validar</Button>
             <Snackbar open={openErrorUser} autoHideDuration={1500}
                 onClose={() => setOpenErrorUser(false)}>
                 <Alert severity="error"
-                    onClose={() => setOpenErrorUser(false)}>Usuário não existe ou está inativo</Alert>
+                    onClose={() => setOpenErrorUser(false)}>Usuário não existe</Alert>
             </Snackbar>
             <Snackbar open={openErrorPass} autoHideDuration={1500}
                 onClose={() => setOpenErrorPass(false)}>
                 <Alert severity="error"
-                    onClose={() => setOpenErrorPass(false)}>Senha incorreta</Alert>
+                    onClose={() => setOpenErrorPass(false)}>Revise os dados, algo está incorreto</Alert>
             </Snackbar>
             <Snackbar open={openSuccess} autoHideDuration={1500}
                 onClose={() => setOpenSuccess(false)}>
                 <Alert severity="success"
-                    onClose={() => setOpenSuccess(false)}>Login realizado com sucesso!</Alert>
+                    onClose={() => setOpenSuccess(false)}>Dados validados com sucesso!</Alert>
             </Snackbar>
+            <FormDialog open={open} handleClose={handleClose} user={user} />
         </div>
     );
 };

@@ -1,0 +1,19 @@
+.recoverWrapper{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+span{
+    color: grey;
+    align-self: center;
+}
+
+.recoverForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40%;
+    align-self: center;
+    margin-bottom: 20px;
+}
