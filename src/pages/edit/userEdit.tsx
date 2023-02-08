@@ -4,7 +4,6 @@ import { updateUser } from "../../services/userService";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import './userEdit.css';
-import moment from "moment";
 
 export const UserEdit = () => {
     const { state } = useLocation();
@@ -116,9 +115,9 @@ export const UserEdit = () => {
             <TextField
                 id="birth"
                 label="Data de nascimento"
-                value={moment(user.birth).format('DD/MM/YYYY')}
+                value={user.birth}
                 variant="filled"
-                // onChange={handleChange}
+                onChange={handleChange}
                 type="date"
             />
             <TextField

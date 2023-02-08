@@ -9,13 +9,12 @@ import { Login } from "./pages/login/login";
 import { Register } from "./pages/create/create";
 import { StoreProvider } from "./context/provider";
 import { PassRecover } from "./pages/recover/passRecover";
-import { FormDialog } from "./pages/recover/dialog/recoverDialog";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <div>404</div>,
+    errorElement: <div>404 ERROR</div>,
   },
   {
     path: "/login",

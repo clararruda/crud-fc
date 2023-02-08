@@ -29,7 +29,7 @@ export const useFormControls = () => {
                 setOpenSuccess(true);
                 setTimeout(() => {
                     nav("/userList");
-                }, 2000);
+                }, 1500);
             } else {
                 setOpenErrorPass(true);
             }

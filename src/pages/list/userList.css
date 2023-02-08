@@ -4,3 +4,12 @@
     align-items: center;
     margin: 20px;
 }
+
+.filterWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+    margin-bottom: 20px;
+}

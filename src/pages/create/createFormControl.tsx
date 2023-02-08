@@ -1,3 +1,4 @@
+import moment from "moment";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useStore } from "../../context/provider";
@@ -33,8 +34,8 @@ const initialFormValues: FormValues = {
   password: "",
   address: "",
   cpf: "",
-  updatedAt: new Date().toISOString(),
-  createdAt: new Date().toISOString(),
+  updatedAt: moment().format("YYYY-MM-DD"),
+  createdAt: moment().format("YYYY-MM-DD"),
   formSubmitted: false,
   success: false
 };
@@ -55,7 +56,7 @@ export const useFormControls = () => {
       .then((resp: User) => {
         setOpenSuccess(true);
         setTimeout(() => {
-          nav("/userList");
+          nav("/");
         }, 2000);
       })
       .catch((error) => {
