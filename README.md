@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# CRUD Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ReactJS APP created with Typescript, [MUI Components](https://mui.com/material-ui/) and [MockAPI](https://mockapi.io/).
+
+
 
 ## Available Scripts
 
