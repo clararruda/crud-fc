@@ -1,4 +1,4 @@
-# CRUD Create React App
+# CRUD React App
 
 ReactJS APP created with Typescript, [MUI Components](https://mui.com/material-ui/) and [MockAPI](https://mockapi.io/).
 
